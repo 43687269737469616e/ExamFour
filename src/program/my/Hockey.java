@@ -1,36 +1,34 @@
+package program.my;
 
-
-public class Hockey extends Athlete{
+public class Hockey extends Athlete implements DoThis{
 
 	private String stickBrand;
 
 
-	public Hockey(int age, String team, String position, String stickBrand){
-		super(age, team, position);
-		setStickBrand(stickBrand);
+    //Constructor
+    public Hockey(Name name, int age, String team, String position, String stickBrand) {
+        super(name, age, team, position);
+        this.stickBrand = stickBrand;
+    }
 
+    public void doThis(){
+        System.out.println("I sit in a penalty box\n");
+    }
 
-	}
+	//toString
+    @Override
+    public String toString() {
+        return super.toString() + " Hockey{" +
+                "stickBrand='" + stickBrand + '\'' +
+                '}';
+    }
 
-	public void doThis(){
-		System.out.println("You are in the penalty box!!\n");
-	}
+    //Setters and Getters
+    public String getStickBrand() {
+        return stickBrand;
+    }
 
-
-
-	public String getStickBrand() {
-		return stickBrand;
-	}
-
-	public void setStickBrand(String stickBrand) {
-		this.stickBrand=stickBrand;
-	}
-
-	public String toString(String stickBrand){
-		return "Player: "+ super.getName() + "\nTeam: " + super.getTeam() + "/nPosition: "
-				+ super.getPosition() + "\nMain Sponsor: " + stickBrand
-				+ "\nAge: " + super.getAge();
-	}
-
-
+    public void setStickBrand(String stickBrand) {
+        this.stickBrand = stickBrand;
+    }
 }

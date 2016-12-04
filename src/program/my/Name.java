@@ -1,48 +1,36 @@
-import java.util.Scanner;
+package program.my;
 
 public class Name {
 	private String firstName;
 	private String lastName;
 
-	Scanner input = new Scanner(System.in);
-
 	// Constructor
-	public Name(){
-		System.out.println("Enter your first name: ");
-		firstName = input.nextLine();
-		System.out.println("Enter your last name: ");
-		lastName = input.nextLine();
+    public Name(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
 
-	}
+    //toString
+    @Override
+    public String toString() {
+        return "Name [firstName=" + firstName + ", lastName=" + lastName + "]";
+    }
 
-	// Getters and Setters
-	public String getFirstName() {
-		System.out.println("Enter first name: ");
-		firstName = input.nextLine();
-		return firstName;
-	}
+    // Getters and Setters
+    public String getFirstName() {
+        return firstName;
+    }
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
 
-	public String getLastName() {
-		System.out.println("Enter last name: ");
-		lastName = input.nextLine();
-		return lastName;
-	}
+    public String getLastName() {
+        return lastName;
+    }
 
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
-
-	@Override
-	public String toString() {
-		return "Name [firstName=" + firstName + ", lastName=" + lastName + "]";
-	}
-
-
-
-
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
 
 } // end class

@@ -1,18 +1,18 @@
-
+package program.my;
 public class TestClass {
 
 	public static void main(String[] args) {
 
-		//age, team, position, special
-		Baseball hank = new Baseball(26, "Team", "Batter", "Third Base");
-		Football terry = new Football(25, "Team2", "QB", "Throwing");
-		Hockey mario = new Hockey(27, "Team3", "Center", "CCM");
-		Golf tiger = new Golf(28, "Team4", "Green", "Nike");
+		//name,age, team, position, special
+		Baseball hank = new Baseball(new Name("hank","last"),26, "Team", "Batter", "Third Base");
+		Football terry = new Football(new Name("terry", "last"),25, "Team2", "QB", "Throwing");
+		Hockey mario = new Hockey(new Name("mario", "last"),27, "Team3", "Center", "CCM");
+		Golf tiger = new Golf(new Name("tiger", "last"),28, "Team4", "Green", "Nike");
 
-		Baseball barry = new Baseball(29, "Team4", "Thrower", "Third Base");
-		Football payton = new Football(30, "Team5", "QB", "Catching");
-		Hockey wayne = new Hockey(31,"Team8", "Center", "Bauer");
-		Golf phil = new Golf(42, "Team199", "Driving Range", "Tileist");
+		Baseball barry = new Baseball(new Name("barry", "last"),29, "Team4", "Thrower", "Third Base");
+		Football payton = new Football(new Name("payton", "last"),30, "Team5", "QB", "Catching");
+		Hockey wayne = new Hockey(new Name("wayne", "last"),31,"Team8", "Center", "Bauer");
+		Golf phil = new Golf(new Name("phil", "last"),42, "Team199", "Driving Range", "Titleist");
 
 		hank.doThis();
 		terry.doThis();

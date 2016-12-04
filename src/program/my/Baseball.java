@@ -1,35 +1,33 @@
+package program.my;
 
-
-public class Baseball extends Athlete{
+public class Baseball extends Athlete implements DoThis{
 
 	private String batPosition;
 
+    //Constructor
+    public Baseball(Name name, int age, String team, String position, String batPosition) {
+        super(name, age, team, position);
+        this.batPosition = batPosition;
+    }
 
-	public Baseball(int age, String team, String position, String batingPosition){
-		super(age, team, position);
-		setBatPosition(batPosition);
+    //toString
+    @Override
+    public String toString() {
+        return super.toString() +" Baseball{" +
+                "batPosition='" + batPosition + '\'' +
+                '}';
+    }
 
-
+    public void doThis(){
+		System.out.println("I hit something\n");
 	}
 
-	public void doThis(){
-		System.out.println("You hit!!\n");
-	}
+	//Setters and Getters
+    public String getBatPosition() {
+        return batPosition;
+    }
 
-
-	public String getBatPosition() {
-		return batPosition;
-	}
-
-	public void setBatPosition(String batPosition) {
-		this.batPosition = batPosition;
-	}
-
-	public String toString(String battingPosition){
-		return "Player: "+ super.getName() + "\nTeam: " + super.getTeam() + "/nPosition: "
-				+ super.getPosition() + "\nMain Sponsor: " + batPosition
-				+ "\nAge: " + super.getAge();
-	}
-
-
+    public void setBatPosition(String batPosition) {
+        this.batPosition = batPosition;
+    }
 }

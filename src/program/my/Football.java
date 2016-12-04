@@ -1,36 +1,33 @@
-import javax.swing.JOptionPane;
+package program.my;
 
-public class Football extends Athlete{
+public class Football extends Athlete implements DoThis{
 
 	private String specialty;
 
+    //Constructor
+    public Football(Name name, int age, String team, String position, String specialty) {
+        super(name, age, team, position);
+        this.specialty = specialty;
+    }
 
-	public Football(int age, String team, String position, String specialty){
-		super(age, team, position);
-		setSpecialty(specialty);
+    //toString
+    @Override
+    public String toString() {
+        return super.toString() + " Football{" +
+                "specialty='" + specialty + '\'' +
+                '}';
+    }
 
-
+    public void doThis(){
+		System.out.println("I tackle something\n");
 	}
 
-	public void doThis(){
-		System.out.println("You made a tackle!!\n");
-	}
+    //Setters and Getters
+    public String getSpecialty() {
+        return specialty;
+    }
 
-
-
-	public String getSpecialty() {
-		return specialty;
-	}
-
-	public void setSpecialty(String specialty) {
-		this.specialty=specialty;
-	}
-
-	public String toString(String specialty){
-		return "Player: "+ super.getName() + "\nTeam: " + super.getTeam() + "/nPosition: "
-				+ super.getPosition() + "\nMain Sponsor: " + specialty
-				+ "\nAge: " + super.getAge();
-	}
-
-
+    public void setSpecialty(String specialty) {
+        this.specialty = specialty;
+    }
 }

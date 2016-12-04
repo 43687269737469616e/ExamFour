@@ -1,3 +1,4 @@
+package program.my;
 
 public class Person {
 
@@ -6,9 +7,18 @@ public class Person {
 
 
 	// Constructor
-	public Person(int age){
-		this.name = new Name();
+	public Person(Name name, int age) {
+		this.name = name;
 		this.age = age;
+	}
+
+	//toString
+	@Override
+	public String toString() {
+		return "Person{" +
+				"name=" + name +
+				", age=" + age +
+				'}';
 	}
 
 	// Getters and Setters
@@ -27,10 +37,4 @@ public class Person {
 	public void setAge(int age) {
 		this.age = age;
 	}
-
-	// toString
-	public String toString() {
-		return "Person [name=" + name + ", age=" + age + "]";
-	}
-
 } // end class

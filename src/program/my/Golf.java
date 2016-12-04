@@ -1,23 +1,29 @@
+package program.my;
 
-
-public class Golf extends Athlete{
+public class Golf extends Athlete implements DoThis{
 
 	private String mainSponsor;
 
+	//Constructor
 
-	public Golf(int age, String team, String position, String mainSponsor){
-		super(age, team, position);
-		setMainSponsor(mainSponsor);
-
-
+	public Golf(Name name, int age, String team, String position, String mainSponsor) {
+		super(name, age, team, position);
+		this.mainSponsor = mainSponsor;
 	}
 
 	public void doThis(){
-		System.out.println("You put it in the hole!!\n");
+		System.out.println("I putt it in the hole\n");
 	}
 
+	//toString
+	@Override
+	public String toString() {
+		return super.toString() + " Golf{" +
+				"mainSponsor='" + mainSponsor + '\'' +
+				'}';
+	}
 
-
+	//Setters and Getters
 	public String getMainSponsor() {
 		return mainSponsor;
 	}
@@ -25,12 +31,4 @@ public class Golf extends Athlete{
 	public void setMainSponsor(String mainSponsor) {
 		this.mainSponsor = mainSponsor;
 	}
-
-	public String toString(String mainSponsor){
-		return "Player: "+ super.getName() + "\nTeam: " + super.getTeam() + "/nPosition: "
-					+ super.getPosition() + "\nMain Sponsor: " + mainSponsor
-					+ "\nAge: " + super.getAge();
-	}
-
-
 }

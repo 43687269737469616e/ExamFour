@@ -1,6 +1,6 @@
 package program.my;
 
-public class Golf extends Athlete implements DoThis{
+public class Golf extends Athlete implements DoThis, Comparable{
 
 	private String mainSponsor;
 
@@ -11,6 +11,7 @@ public class Golf extends Athlete implements DoThis{
 		this.mainSponsor = mainSponsor;
 	}
 
+    //This is a polymorphic method from DoThis interface
 	public void doThis(){
 		System.out.println("I putt it in the hole\n");
 	}
@@ -31,4 +32,21 @@ public class Golf extends Athlete implements DoThis{
 	public void setMainSponsor(String mainSponsor) {
 		this.mainSponsor = mainSponsor;
 	}
+
+    @Override
+    public int compareTo(Object o){
+        int result;
+        result = getAge() - ((Golf)o).getAge();
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Golf)) return false;
+
+        Golf golf = (Golf) o;
+
+        return getMainSponsor().equals(golf.getMainSponsor());
+    }
 }

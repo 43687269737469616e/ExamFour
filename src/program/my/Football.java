@@ -1,6 +1,8 @@
 package program.my;
 
-public class Football extends Athlete implements DoThis{
+import java.util.Comparator;
+
+public class Football extends Athlete implements DoThis, Comparable{
 
 	private String specialty;
 
@@ -18,6 +20,7 @@ public class Football extends Athlete implements DoThis{
                 '}';
     }
 
+    //This is a polymorphic method from DoThis interface
     public void doThis(){
 		System.out.println("I tackle something\n");
 	}
@@ -29,5 +32,22 @@ public class Football extends Athlete implements DoThis{
 
     public void setSpecialty(String specialty) {
         this.specialty = specialty;
+    }
+
+    @Override
+    public int compareTo(Object o){
+        int result;
+        result = getAge() - ((Football)o).getAge();
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Football)) return false;
+
+        Football football = (Football) o;
+
+        return getSpecialty().equals(football.getSpecialty());
     }
 }

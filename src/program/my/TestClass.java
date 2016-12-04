@@ -14,6 +14,7 @@ public class TestClass {
 		Hockey wayne = new Hockey(new Name("wayne", "last"),31,"Team8", "Center", "Bauer");
 		Golf phil = new Golf(new Name("phil", "last"),42, "Team199", "Driving Range", "Titleist");
 
+        //All the following doThis calls are polymorphic
 		hank.doThis();
 		terry.doThis();
 		mario.doThis();
@@ -22,6 +23,16 @@ public class TestClass {
 		payton.doThis();
 		wayne.doThis();
 		phil.doThis();
+
+        System.out.println(hank.equals(barry));
+        System.out.println(terry.equals(payton));
+        System.out.println(mario.equals(wayne));
+        System.out.println(tiger.equals(phil));
+        System.out.println("\n");
+        System.out.println(hank.compareTo(barry));
+        System.out.println(terry.compareTo(payton));
+        System.out.println(mario.compareTo(wayne));
+        System.out.println("\n");
 
 		System.out.println(hank);
 		System.out.println(terry);
